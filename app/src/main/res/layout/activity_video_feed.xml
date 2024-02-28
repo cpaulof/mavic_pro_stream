@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.VideoFeedActivity">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:translationZ="1dp">
+
+        <TextureView
+            android:id="@+id/textureView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:translationZ="2dp">
+
+        <TextView
+            android:id="@+id/labelHost"
+            android:layout_width="71dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="URL:"
+            android:textAlignment="textStart"
+            android:textSize="10sp" />
+
+        <EditText
+            android:id="@+id/hostText"
+            android:layout_width="262dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="rtmp://127.0.0.1:1935/"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button8"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="0dp"
+                android:onClick="startLiveStream"
+                android:text="Start"
+                android:textSize="10sp"
+                app:cornerRadius="5dp" />
+
+            <Button
+                android:id="@+id/button9"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="0dp"
+                android:onClick="stopLiveStream"
+                android:text="Stop"
+                android:textSize="10sp"
+                app:cornerRadius="5dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
